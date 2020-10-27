@@ -2,6 +2,9 @@
 
 namespace ATool.Example
 {
+    /// <summary>
+    /// 时间戳 示例
+    /// </summary>
     public static class DateTimeXEg
     {
         //需要转换的日期

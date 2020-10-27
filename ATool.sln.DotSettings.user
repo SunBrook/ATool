@@ -3,5 +3,10 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::B1F2846D-B13B-48E8-B0B7-AB2954FFBE3D::.NETFramework,Version=v4.6::ATool.UnitTest.AesTest.Encrypt&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::B1F2846D-B13B-48E8-B0B7-AB2954FFBE3D::.NETFramework,Version=v4.6::ATool.UnitTest.AesTest.Decrypt&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B1F2846D-B13B-48E8-B0B7-AB2954FFBE3D::.NETFramework,Version=v4.6::ATool.UnitTest.DesTest.Encrypt&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B1F2846D-B13B-48E8-B0B7-AB2954FFBE3D::.NETFramework,Version=v4.6::ATool.UnitTest.DesTest.Decrypt&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B1F2846D-B13B-48E8-B0B7-AB2954FFBE3D::.NETFramework,Version=v4.6::ATool.UnitTest.Md5XTest.Encrypt16&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B1F2846D-B13B-48E8-B0B7-AB2954FFBE3D::.NETFramework,Version=v4.6::ATool.UnitTest.Md5XTest.Encrypt32&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B1F2846D-B13B-48E8-B0B7-AB2954FFBE3D::.NETFramework,Version=v4.6::ATool.UnitTest.AesTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -39,6 +39,9 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="DateTime\DateTimeXEg.cs" />
+        <Compile Include="Encrypt\AesEg.cs" />
+        <Compile Include="Encrypt\DesEg.cs" />
+        <Compile Include="Encrypt\Md5XEg.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

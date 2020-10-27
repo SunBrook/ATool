@@ -47,7 +47,7 @@ namespace ATool
             cs.Write(inputByteArray, 0, inputByteArray.Length);
             // 如果两次密匙不一样，这一步可能会引发异常
             cs.FlushFinalBlock();
-            return System.Text.Encoding.Default.GetString(ms.ToArray());
+            return Encoding.Default.GetString(ms.ToArray());
         }
     }
 }

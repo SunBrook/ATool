@@ -3,10 +3,10 @@
 namespace ATool.UnitTest
 {
     /// <summary>
-    /// AES加密 测试
+    /// DES 测试
     /// </summary>
     [TestFixture]
-    public class AesTest
+    public class DesTest
     {
         //明文
         private string _testStr; 
@@ -22,28 +22,28 @@ namespace ATool.UnitTest
         public void Setup()
         {
             _testStr = "ATool for C#.";
-            _enStr = "f3CPqqS0TsxCCauBzSWx+Q==";
-            _key = "70FAFC54FEA5E52DB46AF021A8A35BC4";
+            _enStr = "cmJfD7UrWKhiEYMUiH4Dsg==";
+            _key = "2D655B74";
         }
 
         /// <summary>
-        /// AES加密
+        /// DES 加密
         /// </summary>
         [Test]
         public void Encrypt()
         {
-            string result = Aes.Encrypt(_testStr, _key);
+            string result = Des.Encrypt(_testStr, _key);
             Assert.AreEqual(_enStr,result);
         }
 
         /// <summary>
-        /// AES解密
+        /// DES 解密
         /// </summary>
         [Test]
         public void Decrypt()
         {
-            string result = Aes.Decrypt(_enStr, _key);
-            Assert.AreEqual(result,_testStr);
-        }
+            string result = Des.Decrypt(_enStr, _key);
+            Assert.AreEqual(_testStr,result);
+        } 
     }
 }
