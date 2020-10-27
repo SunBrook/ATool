@@ -43,10 +43,6 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\ATool_Library\ATool.Library\ATool.Library.csproj">
-        <Project>{3393d340-2906-4b74-b166-5abbb61b2e35}</Project>
-        <Name>ATool.Library</Name>
-      </ProjectReference>
       <ProjectReference Include="..\..\ATool_Library\ATool\ATool.csproj">
         <Project>{036bbc1c-09be-4b5e-ae16-28cedf16db22}</Project>
         <Name>ATool</Name>
