@@ -13,7 +13,7 @@ namespace ATool
         /// AES加密
         /// </summary>
         /// <param name="str">明文</param>
-        /// <param name="key">密钥</param>
+        /// <param name="key">密钥，长度32</param>
         /// <returns></returns>
         public static string Encrypt(string str, string key)
         {
@@ -37,7 +37,7 @@ namespace ATool
         /// AES解密
         /// </summary>
         /// <param name="str">密文</param>
-        /// <param name="key">密钥</param>
+        /// <param name="key">密钥, 长度32</param>
         /// <returns></returns>
         public static string Decrypt(string str, string key)
         {
