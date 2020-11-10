@@ -1,4 +1,5 @@
 ﻿using System;
+using ATool.Example.DbOperate;
 
 namespace ATool.Example
 {
@@ -53,6 +54,13 @@ namespace ATool.Example
             //Result
 
             //Text
+
+            #region DbOperate
+            
+            //BulkCopy
+            SqlConnectionExtensionEg.BulkCopyEg();
+
+            #endregion
         }
     }
 }

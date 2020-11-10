@@ -39,6 +39,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="DateTime\DateTimeXEg.cs" />
+        <Compile Include="DbOperate\SqlConnectionExtensionEg.cs" />
         <Compile Include="Encrypt\AesEg.cs" />
         <Compile Include="Encrypt\DesEg.cs" />
         <Compile Include="Encrypt\Md5XEg.cs" />
@@ -50,6 +51,9 @@
         <Project>{036bbc1c-09be-4b5e-ae16-28cedf16db22}</Project>
         <Name>ATool</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="File" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
