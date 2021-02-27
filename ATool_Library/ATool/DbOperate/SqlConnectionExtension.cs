@@ -16,6 +16,17 @@ namespace ATool
         /// <summary>
         /// 使用 SqlBulkCopy 向 destinationTableName 表插入数据
         /// </summary>
+        /// <example>
+        /// <code>
+        /// using System.Data.SqlClient;
+        /// 
+        /// var dbConnString = "": //数据库连接字符串
+        /// using (SqlConnection conn = new SqlConnection(dbConnString)
+        /// {
+        ///    conn.BulkCopy(tieList, tieList.Count, "MedicalCableTie");
+        /// }
+        /// </code>
+        /// </example>
         /// <typeparam name="TModel">必须拥有与目标表所有字段对应属性</typeparam>
         /// <param name="conn"></param>
         /// <param name="modelList">要插入的数据</param>
@@ -24,7 +35,7 @@ namespace ATool
         /// <param name="bulkCopyTimeout">SqlBulkCopy.BulkCopyTimeout</param>
         /// <param name="externalTransaction">要使用的事务</param>
         public static void BulkCopy<TModel>(this SqlConnection conn, List<TModel> modelList, int batchSize,
-            string destinationTableName = null, int? bulkCopyTimeout = null, SqlTransaction externalTransaction = null)
+                string destinationTableName = null, int? bulkCopyTimeout = null, SqlTransaction externalTransaction = null)
         {
             bool shouldCloseConnection = false;
 
@@ -103,7 +114,7 @@ namespace ATool
                     if (GetUnderlyingType(prop.PropertyType).IsEnum)
                     {
                         if (value != null)
-                            value = (int) value;
+                            value = (int)value;
                     }
 
                     dr[i] = value ?? DBNull.Value;
@@ -123,10 +134,10 @@ namespace ATool
                     tableName);
 
             List<SysColumn> columns = new List<SysColumn>();
-            using (SqlConnection conn = (SqlConnection) ((ICloneable) sourceConn).Clone())
+            using (SqlConnection conn = (SqlConnection)((ICloneable)sourceConn).Clone())
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand {Connection = conn, CommandText = sql};
+                SqlCommand cmd = new SqlCommand { Connection = conn, CommandText = sql };
 
                 using (var reader = cmd.ExecuteReader())
                 {
