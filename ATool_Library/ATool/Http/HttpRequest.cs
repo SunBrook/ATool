@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 using System.Text;
 
@@ -79,6 +80,82 @@ namespace ATool
             }
 
             return strValue;
+        }
+
+
+        /// <summary>
+        /// WebRequest 请求WebSerivce
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="soapAction"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        public static string HttpPostWebService(string url, string soapAction, string parameter)
+        {
+            string result = string.Empty;
+            byte[] bytes = null;
+
+            Stream writer = null;
+            HttpWebRequest request = null;
+            HttpWebResponse response = null;
+
+            bytes = Encoding.UTF8.GetBytes(parameter);
+
+            request = (HttpWebRequest)WebRequest.Create(url);
+            request.Headers.Add("SOAPAction", soapAction);
+            request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+            request.Headers.Add("Accept-Language", "zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3");
+            request.UserAgent = "Mozilla/5.0 (Windows NT 5.2; rv:12.0) Gecko/20100101 Firefox/12.0";
+            request.Method = "POST";
+            request.ContentType = "application/xml";
+            request.ContentLength = bytes.Length;
+
+            try
+            {
+                writer = request.GetRequestStream();        //获取用于写入请求数据的Stream对象
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
+
+            writer.Write(bytes, 0, bytes.Length);       //把参数数据写入请求数据流
+            writer.Close();
+
+            try
+            {
+                response = (HttpWebResponse)request.GetResponse();      //获得响应
+            }
+            catch (WebException ex)
+            {
+                return "";
+            }
+
+            #region 这种方式读取到的是一个返回的结果字符串
+            //Stream stream = response.GetResponseStream();        //获取响应流
+            //XmlTextReader Reader = new XmlTextReader(stream);
+            //Reader.MoveToContent();
+            //result = Reader.ReadInnerXml();
+
+            //Reader.Dispose();
+            //Reader.Close();
+
+            //stream.Dispose();
+            //stream.Close();
+            #endregion
+
+            #region 这种方式读取到的是一个Xml格式的字符串
+            StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+            result = reader.ReadToEnd();
+
+            response.Dispose();
+            response.Close();
+
+            reader.Close();
+            reader.Dispose();
+            #endregion
+
+            return result;
         }
     }
 }

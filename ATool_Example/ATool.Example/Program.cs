@@ -48,6 +48,10 @@ namespace ATool.Example
             //File
 
             //Http
+            var url = "http://172.16.20.29/soap/JHIPLIB.SOAP.BS.XmlService.cls?CfgItem=JH1801获取检验标本信息服务";
+            var soapAction = "http://bjgoodwillcis.com/JHIPLIB.SOAP.BS.XmlService.XMLMessageServer";
+            var parameter = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:good=\"http://goodwillcis.com\" xmlns:bjg=\"http://bjgoodwillcis.com\">\r\n   <soapenv:Header>\r\n      <good:JiaheSecurity>\r\n         <!--Optional:-->\r\n         <good:UserName>?</good:UserName>\r\n         <!--Optional:-->\r\n         <good:Password>?</good:Password>\r\n         <!--Optional:-->\r\n         <good:Timestamp>?</good:Timestamp>\r\n         <!--Optional:-->\r\n         <good:FromSYS>?</good:FromSYS>\r\n         <!--Optional:-->\r\n         <good:IV>?</good:IV>\r\n      </good:JiaheSecurity>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <bjg:XMLMessageServer>\r\n         <!--Optional:-->\r\n         <bjg:Message><![CDATA[<Request><cardno>1000</cardno></Request>]]></bjg:Message>\r\n      </bjg:XMLMessageServer>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>";
+            HttpRequest.HttpPostWebService(url, soapAction, parameter);
 
             //Random
 
