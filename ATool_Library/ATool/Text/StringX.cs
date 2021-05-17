@@ -607,5 +607,17 @@ namespace ATool
             //计算总和
             return numYi + numWan + numGe;
         }
+
+        /// <summary>
+        /// 字符串逆转方法
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string Reverse(this string str)
+        {
+            char[] arr = str.ToCharArray();
+            Array.Reverse(arr);
+            return new string(arr);
+        }
     }
 }
