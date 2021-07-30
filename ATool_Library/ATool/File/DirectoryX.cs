@@ -35,5 +35,16 @@ namespace ATool
                 Create(path);
             }
         }
+
+        /// <summary>
+        /// 确保路径存在，不存在则创建
+        /// </summary>
+        public static void EnsureCreated(string path)
+        {
+            if (!Exist(path))
+            {
+                Create(path);
+            }
+        }
     }
 }

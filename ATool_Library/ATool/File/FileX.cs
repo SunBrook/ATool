@@ -42,11 +42,12 @@ namespace ATool
         /// </summary>
         /// <param name="filePath">文件路径</param>
         /// <param name="content">文件内容</param>
-        public static void Write(string filePath, string content)
+        /// <param name="isAppend">是否追加内容，默认覆盖写入</param>
+        public static void Write(string filePath, string content, bool isAppend = false)
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter(filePath))
+                using (StreamWriter sw = new StreamWriter(filePath, isAppend))
                 {
                     sw.Write(content);
                 }
@@ -65,6 +66,18 @@ namespace ATool
         public static bool Exist(string path)
         {
             return File.Exists(path);
+        }
+
+        /// <summary>
+        /// 确保文件存在，如果不存在则创建
+        /// </summary>
+        /// <param name="path"></param>
+        public static void EnsureCreated(string path)
+        {
+            if (!Exist(path))
+            {
+                File.Create(path);
+            }
         }
     }
 }
